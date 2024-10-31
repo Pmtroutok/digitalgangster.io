@@ -1,29 +1,123 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Book Generator by Paul Trout</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/docx/7.1.0/docx.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6" id="main-container">
+                <h1 class="text-center">AI Book Generator by Paul Trout</h1>
+                <form id="input-form" class="my-4">
+                    <div class="form-group">
+                        <label for="api-token">API Token</label>
+                        <input type="text" id="api-token" class="form-control" placeholder="Enter your API token" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="gpt-version">GPT Version</label>
+                        <select id="gpt-version" class="form-control">
+                            <option value="gpt-3.5-turbo" selected>gpt-3.5-turbo</option>
+                            <option value="gpt-3.5">gpt-3.5</option>
+                            <option value="gpt-4o">gpt-4o</option>
+                            <option value="gpt-4o-turboo">gpt-4o-turbo</option>
+                            <option value="gpt-3">gpt-3</option>
+                            <!-- Add more versions as needed -->
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="gpt-role">Role of GPT</label>
+                        <input type="text" id="gpt-role" class="form-control" value="writer" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="book-length">Book Length (words)</label>
+                        <input type="text" id="book-length" class="form-control" value="20000" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="genre">Title</label>
+                        <input type="text" id="genre" class="form-control" value="How to Become a Great Salesperson" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="keywords">Keywords</label>
+                        <input type="text" id="keywords" class="form-control" placeholder="selling, selling tools, selling data, personal sales experiences, 20 years of experience, sell relationships" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="extra-instructions">Extra Instructions</label>
+                        <input type="text" id="extra-instructions" class="form-control" value="if there is anywhere in the content that needs a image to better explain the content then add [[$image description here$]] but replace the description with what would be best words to have ai generate the images, no pictures with humans please and keep it to 1 or 2 images per chapter.">
+                    </div>
+                    <div class="form-group">
+                        <input type="checkbox" id="auto-gen" checked="checked">
+                        <label for="auto-gen">Auto Generate Chapters</label>
+                    </div>
+                    <button type="button" id="conceptButton" class="btn btn-primary btn-block">Generate Book Concepts</button>
+                    <button type="button" id="contentButton" class="btn btn-primary btn-block">Generate Book Table of Contents</button>
+                    <button type="button" id="chaptersButton" class="btn btn-primary btn-block">Generate Book Chapters</button>
+                </form>
+                <div class="form-group">
+                    <label for="concept">Generated Book Concept</label>
+                    <textarea id="concept" class="form-control"></textarea>
+                    <button type="button" id="saveConceptButton" class="btn btn-primary btn-block">Save Concept to File</button>
+                </div>
 
-<html lang=”en”>
+                <div class="form-group">
+                    <label for="contents">Generated Table of Contents</label>
+                    <textarea id="contents" class="form-control"></textarea>
+                    <button type="button" id="saveContentsButton" class="btn btn-primary btn-block">Save Table of Contents to File</button>
+                </div>
+                <div class="form-group">
+                    <label for="chapters">Generated Chapters</label>
+                    <div id="chapters" class="border p-2"></div>
+                </div>
+                <button type="button" id="exportButton" class="btn btn-primary btn-block">Export to .txt</button>
+            </div>
+            <div class="col-md-6" id="image-container">
+                <h1 class="text-center">Book Pages Generation</h1>
+                <form id="image-form" class="my-4">
+                    <div class="form-group">
+                    </div>
+                    <button type="button" id="generateIntroductionButton" class="btn btn-primary btn-block">Generate Introduction</button>
+                    <button type="button" id="generateDiscriptionAmazon" class="btn btn-primary btn-block">Generate Description</button>
+                    <button type="button" id="generateGlossaryButton" class="btn btn-primary btn-block">Generate Glossary</button>
+                    <button type="button" id="generate7keywords" class="btn btn-primary btn-block">Generate Keywords</button>
+                    <button type="button" id="generateAboutAuthor" class="btn btn-primary btn-block">Generate About Author</button>
+                    <label for="introduction">Generated Introduction</label>
+                    <textarea id="introduction" class="form-control"></textarea>
 
-  <head>
 
-    <meta charset=”UTF-8″>
+                    <div class="form-group">
+                        <label for="glossary">Generated Glossary</label>
 
-    <meta name=”viewport” content=”width=device-width, initial-scale=1.0″>
+                        <textarea id="glossary" class="form-control"></textarea>
 
-    <meta http-equiv=”X-UA-Compatible” content=”ie=edge”>
+                    </div>
+                    <div class="form-group">
+                        <label for="glossary">Generated Description for Amazon</label>
 
-    <title>Digital-Gangster</title>
+                        <textarea id="description" class="form-control"></textarea>
 
-  </head>
+                    </div>
+                    <div class="form-group">
+                        <label for="glossary">Generated 7 keywords</label>
+                        <textarea id="gen7keywords" class="form-control"></textarea>
 
-  <body>
+                    </div>
+                    <div class="form-group">
+                        <label for="glossary">Generated About Author</label>
+                        <input type="text" id="generateAboutAuthorinput" class="form-control" value="Paul Trout, DOB 7-12-1980, born in tulsa, oklahoma, likes outdoors, hunting, fishing, and most of all his family." required>
+                        <textarea id="aboutAuthor" class="form-control"></textarea>
 
-    <main>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="apikey.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
 
-        <h1>Welcome to Digital Ganger</h1>  
-
-        <p>This is my new website hosted on GitHub Pages!</p>
-
-    </main>
-
-  </body>
-
-</html>”
