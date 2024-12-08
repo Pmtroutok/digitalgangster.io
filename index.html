@@ -6,68 +6,149 @@
     <meta name="description" content="Paul Trout - A Journey of Creativity, Innovation, and Passion">
     <title>Paul Trout - About Me</title>
     <style>
+        /* Global Styles */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f9;
+            background-color: #f9fafb;
             color: #333;
         }
+
+        /* Header Styles */
         header {
-            background-color: #4CAF50;
+            background: linear-gradient(90deg, #4CAF50, #6BC46D);
             color: white;
-            padding: 10px 20px;
+            padding: 50px 20px;
             text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
+
+        header h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+
+        header p {
+            font-size: 1.2em;
+            margin-top: 10px;
+            font-style: italic;
+        }
+
+        /* Main Content Styles */
         main {
-            max-width: 800px;
+            max-width: 1000px;
             margin: 20px auto;
             padding: 20px;
             background: white;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
         }
-        h1, h2 {
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        section h2 {
+            font-size: 2em;
             color: #4CAF50;
+            margin-bottom: 10px;
+            border-bottom: 3px solid #6BC46D;
+            display: inline-block;
+            padding-bottom: 5px;
         }
+
+        section p, section ul {
+            font-size: 1.1em;
+            line-height: 1.8;
+        }
+
         ul {
-            line-height: 1.6;
+            list-style-type: none;
+            padding: 0;
         }
+
+        ul li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        ul li::before {
+            content: '•';
+            color: #4CAF50;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        /* Footer Styles */
         footer {
             text-align: center;
-            padding: 10px;
-            background-color: #333;
+            padding: 20px;
+            background: #333;
             color: white;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
+            margin-top: 20px;
+            font-size: 0.9em;
+        }
+
+        footer a {
+            color: #6BC46D;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            header p {
+                font-size: 1em;
+            }
+
+            main {
+                padding: 15px;
+            }
+
+            section h2 {
+                font-size: 1.8em;
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Welcome to Paul Trout's Journey</h1>
+        <h1>Paul Trout</h1>
+        <p>A Journey of Creativity, Innovation, and Passion</p>
     </header>
     <main>
         <section>
             <h2>About Me</h2>
-            <p>Hi, I'm Paul Trout, a creative individual with a passion for innovation, problem-solving, and storytelling. Here's a little about me:</p>
+            <p>Hello! I'm Paul Trout, a creative individual passionate about innovation, problem-solving, and storytelling. Here's what defines me:</p>
         </section>
         <section>
             <h2>Personal Details</h2>
             <ul>
                 <li><strong>Birthdate:</strong> July 12, 1980</li>
                 <li><strong>Hometown:</strong> Tulsa, Oklahoma</li>
-                <li><strong>Hobbies:</strong> Hunting, fishing, sports (especially football), and cheering for the Kansas City Chiefs.</li>
-                <li><strong>Goals:</strong> Becoming a successful writer and father.</li>
+                <li><strong>Hobbies:</strong> Hunting, fishing, football, and cheering for the Kansas City Chiefs</li>
+                <li><strong>Goals:</strong> Becoming a successful writer and father</li>
             </ul>
         </section>
         <section>
             <h2>Professional Journey</h2>
             <ul>
-                <li><strong>Career:</strong> Over 20 years of experience in sales, including 15 years at Pepsi until June 2024.</li>
-                <li><strong>Achievements:</strong> Won Salesman of the Year multiple times.</li>
-                <li><strong>Tech Enthusiast:</strong> Currently exploring app development, Unity game design, and AI-driven projects.</li>
+                <li><strong>Career:</strong> Over 20 years in sales, including 15 years at Pepsi until June 2024</li>
+                <li><strong>Achievements:</strong> Multiple-time Salesman of the Year</li>
+                <li><strong>Tech Enthusiast:</strong> Exploring app development, Unity game design, and AI projects</li>
             </ul>
         </section>
         <section>
@@ -75,27 +156,27 @@
             <ul>
                 <li><strong>Games:</strong> 
                     <ul>
-                        <li>A slot machine game in Unity with 5 reels and 20 images per reel.</li>
-                        <li>A zombie survival game featuring a stationary player character facing waves of stronger zombies.</li>
-                        <li>A math challenge game with progressive difficulty and a leaderboard.</li>
+                        <li>Slot machine game with 5 reels</li>
+                        <li>Zombie survival game</li>
+                        <li>Math challenge game with a leaderboard</li>
                     </ul>
                 </li>
                 <li><strong>Apps:</strong> 
                     <ul>
-                        <li>A Wear OS news app called <em>theNewNews</em>.</li>
-                        <li>A product date decoder app using OCR.Space.</li>
+                        <li>Wear OS news app: <em>theNewNews</em></li>
+                        <li>Product date decoder app using OCR</li>
                     </ul>
                 </li>
                 <li><strong>Writing:</strong> 
                     <ul>
-                        <li>Fiction book concepts like <em>The Memory Thieves</em>.</li>
-                        <li>A motivational audiobook titled <em>How to Break Bad Habits: Small Changes, Big Results</em>.</li>
+                        <li>Fiction concepts like <em>The Memory Thieves</em></li>
+                        <li>Audiobook: <em>How to Break Bad Habits</em></li>
                     </ul>
                 </li>
                 <li><strong>Creative Projects:</strong> 
                     <ul>
-                        <li>Children's coloring books using AI tools.</li>
-                        <li>Voice cloning using Eleven Labs.</li>
+                        <li>Children's coloring books using AI</li>
+                        <li>Voice cloning with Eleven Labs</li>
                     </ul>
                 </li>
             </ul>
@@ -103,14 +184,16 @@
         <section>
             <h2>Fun Facts</h2>
             <ul>
-                <li><strong>Favorite Team:</strong> Kansas City Chiefs.</li>
-                <li><strong>Development Challenges:</strong> New to Android development and Unity UI design.</li>
-                <li><strong>Branding:</strong> Your Wear OS app has the package name <em>us.lonewolflimited.theonlynewsapp</em>.</li>
+                <li><strong>Favorite Team:</strong> Kansas City Chiefs</li>
+                <li><strong>Development Focus:</strong> Learning Android and Unity UI design</li>
+                <li><strong>Branding:</strong> Wear OS app package: <em>us.lonewolflimited.theonlynewsapp</em></li>
             </ul>
         </section>
     </main>
     <footer>
-        <p>&copy; 2024 Paul Trout | All Rights Reserved</p>
+        <p>&copy; 2024 Paul Trout. Built with passion and a touch of creativity.</p>
+        <p>Follow my journey: <a href="#">Contact Me</a></p>
     </footer>
 </body>
 </html>
+
