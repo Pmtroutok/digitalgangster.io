@@ -3,195 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Paul Trout - A Journey of Creativity, Innovation, and Passion">
-    <title>Paul Trout - About Me</title>
+    <title>LoneWolf Limited - Programmer Portfolio</title>
     <style>
-        /* Global Styles */
         body {
-            font-family: 'Roboto', sans-serif;
             margin: 0;
-            padding: 0;
-            background-color: #d9d9d9;
-            color: #333;
+            font-family: Arial, sans-serif;
+            background-color: black;
+            color: #00ff00; /* Money green */
         }
 
-        /* Header Styles */
         header {
-            background: linear-gradient(90deg, #3A99D9, #5AB8F7);
-            color: white;
-            padding: 50px 20px;
             text-align: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        header h1 {
-            font-size: 2.5em;
-            margin: 0;
-        }
-
-        header p {
-            font-size: 1.2em;
-            margin-top: 10px;
-            font-style: italic;
-        }
-
-        /* Main Content Styles */
-        main {
-            max-width: 1000px;
-            margin: 20px auto;
             padding: 20px;
         }
 
-        section {
-            background: white;
-            padding: 20px;
-            border-radius: 15px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
+        header img {
+            max-width: 300px;
         }
 
-        section h2 {
-            font-size: 2em;
-            color: #3A99D9;
-            margin-bottom: 10px;
-            border-bottom: 3px solid #5AB8F7;
-            display: inline-block;
-            padding-bottom: 5px;
+        .section {
+            padding: 40px;
+            text-align: center;
         }
 
-        section p, section ul {
-            font-size: 1.1em;
-            line-height: 1.8;
-        }
-
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        ul li {
-            margin-bottom: 10px;
+        .gallery {
             display: flex;
-            align-items: center;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
         }
 
-        ul li::before {
-            content: '•';
-            color: #3A99D9;
-            font-weight: bold;
-            margin-right: 10px;
+        .gallery img {
+            width: 200px;
+            height: 150px;
+            object-fit: cover;
+            border: 2px solid #00ff00;
+            border-radius: 5px;
         }
 
-        /* Footer Styles */
         footer {
             text-align: center;
             padding: 20px;
-            background: #333;
-            color: white;
-            margin-top: 20px;
-            font-size: 0.9em;
+            background-color: #00ff00;
+            color: black;
         }
 
         footer a {
-            color: #5AB8F7;
+            color: black;
             text-decoration: none;
             font-weight: bold;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
-
-        /* Media Queries */
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 2em;
-            }
-
-            header p {
-                font-size: 1em;
-            }
-
-            main {
-                padding: 15px;
-            }
-
-            section h2 {
-                font-size: 1.8em;
-            }
         }
     </style>
 </head>
 <body>
+
     <header>
-         <img src="LoneWolfLimited.png">
-        <p>A Journey of Creativity, Innovation, and Passion</p>
+        <img src="LoneWolfLimited.png" alt="LoneWolf Limited Logo">
     </header>
-    <main>
-        <section>
-            <h2>About Me</h2>
-           
-            <p>Hello! I'm Paul Trout, a creative individual passionate about innovation, problem-solving, and storytelling. Here's what defines me:</p>
-        </section>
-        <section>
-            <h2>Personal Details</h2>
-            <ul>
-                <li><strong>Birthdate:</strong> July 12, 1980</li>
-                <li><strong>Hometown:</strong> Tulsa, Oklahoma</li>
-                <li><strong>Hobbies:</strong> Hunting, fishing, football, and cheering for the Kansas City Chiefs</li>
-                <li><strong>Goals:</strong> Becoming a successful writer and father</li>
-            </ul>
-        </section>
-        <section>
-            <h2>Professional Journey</h2>
-            <ul>
-                <li><strong>Career:</strong> Over 20 years in sales, including 15 years at Pepsi until June 2024</li>
-                <li><strong>Achievements:</strong> Multiple-time Salesman of the Year</li>
-                <li><strong>Tech Enthusiast:</strong> Exploring app development, Unity game design, and AI projects</li>
-            </ul>
-        </section>
-        <section>
-            <h2>Current Projects</h2>
-            <ul>
-                <li><strong>Games:</strong> 
-                    <ul>
-                        <li>Slot machine game with 5 reels</li>
-                        <li>Zombie survival game</li>
-                        <li>Math challenge game with a leaderboard</li>
-                    </ul>
-                </li>
-                <li><strong>Apps:</strong> 
-                    <ul>
-                        <li>Wear OS news app: <em>theNewNews</em></li>
-                        <li>Product date decoder app using OCR</li>
-                    </ul>
-                </li>
-                <li><strong>Writing:</strong> 
-                    <ul>
-                        <li>Fiction concepts like <em>The Memory Thieves</em></li>
-                        <li>Audiobook: <em>How to Break Bad Habits</em></li>
-                    </ul>
-                </li>
-                <li><strong>Creative Projects:</strong> 
-                    <ul>
-                        <li>Children's coloring books using AI</li>
-                        <li>Voice cloning with Eleven Labs</li>
-                    </ul>
-                </li>
-            </ul>
-        </section>
-        <section>
-            <h2>Fun Facts</h2>
-            <ul>
-                <li><strong>Favorite Team:</strong> Kansas City Chiefs</li>
-                <li><strong>Development Focus:</strong> Learning Android and Unity UI design</li>
-                <li><strong>Branding:</strong> Wear OS app package: <em>us.lonewolflimited.theonlynewsapp</em></li>
-            </ul>
-        </section>
-    </main>
+
+    <section class="section">
+        <h1>Welcome to LoneWolf Limited</h1>
+        <p>I’m a passionate programmer and developer focused on creating innovative apps and games. Take a look at my portfolio below!</p>
+    </section>
+
+    <section class="section">
+        <h2>App Gallery</h2>
+        <div class="gallery">
+            <!-- Add your app screenshots here -->
+            <img src="https://via.placeholder.com/200x150" alt="App Screenshot 1">
+            <img src="https://via.placeholder.com/200x150" alt="App Screenshot 2">
+            <img src="https://via.placeholder.com/200x150" alt="App Screenshot 3">
+            <img src="https://via.placeholder.com/200x150" alt="App Screenshot 4">
+        </div>
+    </section>
+
     <footer>
-        <p>&copy; 2024 Paul Trout. Built with passion and a touch of creativity.</p>
-        <p>Follow my journey: <a href="#">Contact Me</a></p>
+        <p>Made with ❤️ by LoneWolf Limited</p>
+        <p><a href="mailto:contact@lonewolflimited.com">Contact Me</a></p>
     </footer>
+
 </body>
 </html>
